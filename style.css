@@ -55,6 +55,131 @@ header p {
     margin-top: 5px;
 }
 
+nav {
+    display: flex;
+    justify-content: center; /* Centra los enlaces de navegación */
+    gap: 30px; /* Espacio entre los enlaces */
+    flex-wrap: wrap; /* Permite que los enlaces se envuelvan en pantallas pequeñas */
+}
+
+nav a {
+    text-decoration: none;
+    color: #007bff; /* Un azul vibrante para los enlaces */
+    font-weight: 600;
+    font-size: 1.05em;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+nav a:hover, nav a:focus {
+    background-color: #e9f5ff; /* Un fondo más claro al pasar el ratón */
+    color: #0056b3; /* Un azul más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+/* --- Planes Section Styles --- */
+#planes {
+    background-color: var(--light-bg); /* Un fondo más claro para la sección de planes */
+}
+
+.section-description {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 1.1em;
+    color: #555;
+    padding: 0 20px; /* Asegura padding en móviles */
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+    justify-content: center; /* Centra los planes si no llenan una fila */
+}
+
+.plan-card {
+    background-color: var(--white-bg);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Para flexbox interno en la tarjeta */
+    flex-direction: column; /* Apila elementos verticalmente */
+    justify-content: space-between; /* Empuja el botón al final */
+}
+
+.plan-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.plan-card h3 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.plan-card .price {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 25px;
+}
+
+.plan-card .price small {
+    font-size: 0.5em;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.plan-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    flex-grow: 1; /* Permite que la lista crezca y empuje el botón hacia abajo */
+}
+
+.plan-card ul li {
+    font-size: 1.05em;
+    padding: 8px 0;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el texto de la característica */
+}
+
+.plan-card ul li i {
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+.plan-card ul li.disabled {
+    color: #999;
+    text-decoration: line-through;
+}
+
+.plan-card ul li.disabled i.icon-x {
+    color: #dc3545; /* Color rojo para la 'X' */
+}
+
+.plan-card ul li i.icon-check {
+    color: var(--accent-color); /* Color verde para el check */
+}
+
+.plan-button {
+    margin-top: auto; /* Empuja el botón hacia la parte inferior de la tarjeta */
+    width: 80%; /* Ancho del botón dentro de la tarjeta */
+    max-width: 250px; /* Ancho máximo del botón */
+}
+
+/* Featured Plan Style */
+
+
 section {
     background-color: var(--white-bg);
     padding: 40px 0;
@@ -223,6 +348,30 @@ footer {
     }
 }
 
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .logo {
+        max-width: 150px; /* Ajusta el tamaño del logo para pantallas más pequeñas */
+    }
+
+    header h2 {
+        font-size: 1em;
+        padding: 0 15px; /* Añade padding horizontal para mejor lectura */
+    }
+
+    nav {
+        flex-direction: column; /* Apila los enlaces en pantallas pequeñas */
+        align-items: center; /* Centra los enlaces apilados */
+        gap: 10px; /* Reduce el espacio entre los enlaces apilados */
+    }
+
+    nav a {
+        width: calc(100% - 40px); /* Ancho completo con padding */
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
 @media (max-width: 480px) {
     .container {
         width: 95%;
@@ -239,5 +388,19 @@ footer {
     .cta-button {
         padding: 12px 25px;
         font-size: 1em;
+    }
+}
+
+/* Media Queries for Plans (adjust as needed) */
+@media (max-width: 768px) {
+    .plans-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+    .plan-card {
+        margin: 0 auto; /* Centra las tarjetas individualmente */
+        max-width: 400px; /* Limita el ancho de las tarjetas en móviles */
+    }
+    .featured-plan {
+        transform: scale(1); /* No escalar en móvil */
     }
 }
