@@ -1,11 +1,11 @@
 :root {
-    --primary-color: #0056b3; /* Un azul profesional */
-    --secondary-color: #004085; /* Un azul más oscuro */
-    --accent-color: #28a745; /* Un verde para destacar */
-    --text-color: #333;
+    --primary-color: ; /* Un azul profesional */
+    --secondary-color: #0a2849; /* Un azul más oscuro */
+    --accent-color: #436449; /* Un verde para destacar */
+    --text-color: #436449;
     --light-bg: #f8f9fa;
     --white-bg: #ffffff;
-    --border-color: #dee2e6;
+    --border-color: black;
 }
 
 body {
@@ -26,7 +26,7 @@ body {
 
 header {
     background-color: var(--primary-color);
-    color: white;
+    color: #436449;
     padding: 20px 0;
     text-align: center; /* Esto centrará el <p> y el .header-main como bloque */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -105,7 +105,7 @@ section h2::after {
 }
 
 .feature-item h3 {
-    color: var(--primary-color);
+    color: #203f43;
     margin-top: 0;
     font-size: 1.4em;
 }
@@ -138,7 +138,7 @@ section h2::after {
 }
 
 .customer-competition ul li strong {
-    color: var(--primary-color);
+    color: #203f43;
     margin-right: 10px;
 }
 
@@ -164,7 +164,7 @@ section h2::after {
 }
 
 .service-item h3 {
-    color: var(--primary-color);
+    color: #203f43;
     margin-top: 0;
     font-size: 1.5em;
     margin-bottom: 10px;
@@ -193,7 +193,7 @@ section h2::after {
 }
 
 .cta-button:hover {
-    background-color: #218838; /* Un verde más oscuro al pasar el ratón */
+    background-color: #0a2849; /* Un verde más oscuro al pasar el ratón */
 }
 
 footer {
